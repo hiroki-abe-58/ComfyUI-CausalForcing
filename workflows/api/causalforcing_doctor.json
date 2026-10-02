@@ -1,0 +1,24 @@
+{
+ "1": {
+  "class_type": "CausalForcingDoctor",
+  "inputs": {
+   "runtime_id": "wsl-causalforcing",
+   "verify_sha256": false
+  },
+  "_meta": {
+   "title": "Causal Forcing Doctor"
+  }
+ },
+ "2": {
+  "class_type": "PreviewAny",
+  "inputs": {
+   "source": [
+    "1",
+    0
+   ]
+  },
+  "_meta": {
+   "title": "Doctor report"
+  }
+ }
+}

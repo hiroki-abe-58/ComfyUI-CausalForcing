@@ -1,0 +1,7 @@
+# Normalise text files to LF in the repository and in checkouts.
+* text=auto eol=lf
+*.gif binary
+*.jpg binary
+*.png binary
+*.mp4 binary
+*.webp binary

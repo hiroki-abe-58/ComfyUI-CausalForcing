@@ -1,0 +1,47 @@
+[project]
+# Comfy Registry node id: immutable once published.
+name = "causalforcing"
+version = "0.1.0"
+description = "Unofficial community integration, not affiliated with the Causal Forcing authors: runs the official Causal Forcing++ frame-wise 2-step and Causal Forcing frame-wise 4-step checkpoints (Wan2.1-T2V-1.3B based) in a separate WSL2/Linux runtime, with real VIDEO outputs and step/timing reports."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = []
+# Only what was tested with real weights: Windows 11 ComfyUI host + WSL2 Ubuntu runtime, NVIDIA RTX 5090.
+classifiers = [
+    "Operating System :: Microsoft :: Windows",
+    "Environment :: GPU :: NVIDIA CUDA",
+]
+
+[project.urls]
+Repository = "https://github.com/hiroki-abe-58/ComfyUI-CausalForcing"
+Issues = "https://github.com/hiroki-abe-58/ComfyUI-CausalForcing/issues"
+Documentation = "https://github.com/hiroki-abe-58/ComfyUI-CausalForcing#readme"
+Upstream = "https://github.com/thu-ml/Causal-Forcing"
+
+[tool.comfy]
+PublisherId = "hiroki-abe-58"
+DisplayName = "Causal Forcing for ComfyUI"
+Icon = ""
+includes = []
+# Tested with ComfyUI v0.38.0 only; older versions are not verified.
+requires-comfyui = ">=0.38.0"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--import-mode=importlib -p no:cacheprovider"
+
+[tool.ruff]
+line-length = 160
+target-version = "py310"
+extend-exclude = ["_comfyui"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S"]
+# E501: long provenance/description strings stay intact; S101: asserts in tests
+# S603/S607: subprocess with argv lists is the design (no shell), see docs/SECURITY.md
+ignore = ["B905", "E501", "S101", "S603", "S607", "S110", "S311", "S108"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["causalforcing_comfy"]
+known-third-party = ["comfy", "comfy_api", "comfy_extras", "folder_paths", "nodes", "execution"]

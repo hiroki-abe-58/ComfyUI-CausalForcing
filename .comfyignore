@@ -1,0 +1,30 @@
+# Files excluded from the Comfy Registry package (gitignore syntax, applied on
+# top of .gitignore). The installed node needs the ComfyUI package, the runtime
+# scripts, the example config, workflows, docs and license files.
+
+# Tests and CI
+tests/
+.github/
+.gitignore
+.comfyignore
+.gitattributes
+
+# Maintainer tooling (GPU end-to-end driver, comparison/report scripts)
+scripts/
+
+# Raw benchmark records (summarised in docs/BENCHMARKS.md)
+docs/results/
+
+# Never packaged (also untracked/ignored, listed for safety)
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.mp4
+*.webm
+*.mkv
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+causalforcing.runtimes.json

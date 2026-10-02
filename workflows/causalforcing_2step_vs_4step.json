@@ -1,0 +1,900 @@
+{
+ "id": "0879c9b6-69a9-4eac-a972-61f72aa2e23c",
+ "revision": 0,
+ "last_node_id": 7,
+ "last_link_id": 12,
+ "nodes": [
+  {
+   "id": 1,
+   "type": "CausalForcingRuntime",
+   "pos": [
+    100,
+    130
+   ],
+   "size": [
+    270,
+    58
+   ],
+   "flags": {},
+   "order": 0,
+   "mode": 0,
+   "showAdvanced": null,
+   "inputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "runtime_id",
+     "locked": null,
+     "name": "runtime_id",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "COMBO",
+     "widget": {
+      "name": "runtime_id"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "runtime",
+     "locked": null,
+     "name": "runtime",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "CAUSALFORCING_RUNTIME",
+     "pos": null,
+     "slot_index": null,
+     "links": [
+      7,
+      8
+     ]
+    }
+   ],
+   "properties": {
+    "Node name for S&R": "CausalForcingRuntime"
+   },
+   "widgets_values": [
+    "wsl-causalforcing"
+   ],
+   "widgets_values_named": {
+    "runtime_id": "wsl-causalforcing"
+   }
+  },
+  {
+   "id": 2,
+   "type": "CausalForcingGenerate",
+   "pos": [
+    470,
+    130
+   ],
+   "size": [
+    400,
+    204
+   ],
+   "flags": {},
+   "order": 1,
+   "mode": 0,
+   "showAdvanced": null,
+   "inputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "runtime",
+     "locked": null,
+     "name": "runtime",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "CAUSALFORCING_RUNTIME",
+     "pos": null,
+     "link": 7
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "image",
+     "locked": null,
+     "name": "image",
+     "nameLocked": null,
+     "removable": null,
+     "shape": 7,
+     "type": "IMAGE",
+     "pos": null,
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "prompt",
+     "locked": null,
+     "name": "prompt",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "seed",
+     "locked": null,
+     "name": "seed",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "model",
+     "locked": null,
+     "name": "model",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "COMBO",
+     "widget": {
+      "name": "model"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "videos",
+     "locked": null,
+     "name": "videos",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "INT",
+     "widget": {
+      "name": "videos"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "video",
+     "locked": null,
+     "name": "video",
+     "nameLocked": null,
+     "removable": null,
+     "shape": 6,
+     "type": "VIDEO",
+     "pos": null,
+     "slot_index": null,
+     "links": [
+      9
+     ]
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "report",
+     "locked": null,
+     "name": "report",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "STRING",
+     "pos": null,
+     "slot_index": null,
+     "links": [
+      11
+     ]
+    }
+   ],
+   "title": "Causal Forcing++ frame-wise 2-step",
+   "properties": {
+    "Node name for S&R": "CausalForcingGenerate"
+   },
+   "widgets_values": [
+    "A red fox trotting through fresh snow in a quiet pine forest at sunrise, warm golden light filtering between the trees, the camera tracking alongside at ground level.",
+    101,
+    "fixed",
+    "cfpp_framewise_2step",
+    1
+   ],
+   "widgets_values_named": {
+    "prompt": "A red fox trotting through fresh snow in a quiet pine forest at sunrise, warm golden light filtering between the trees, the camera tracking alongside at ground level.",
+    "seed": 101,
+    "control_after_generate": "fixed",
+    "model": "cfpp_framewise_2step",
+    "videos": 1
+   }
+  },
+  {
+   "id": 3,
+   "type": "CausalForcingGenerate",
+   "pos": [
+    470,
+    464
+   ],
+   "size": [
+    400,
+    204
+   ],
+   "flags": {},
+   "order": 2,
+   "mode": 0,
+   "showAdvanced": null,
+   "inputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "runtime",
+     "locked": null,
+     "name": "runtime",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "CAUSALFORCING_RUNTIME",
+     "pos": null,
+     "link": 8
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "image",
+     "locked": null,
+     "name": "image",
+     "nameLocked": null,
+     "removable": null,
+     "shape": 7,
+     "type": "IMAGE",
+     "pos": null,
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "prompt",
+     "locked": null,
+     "name": "prompt",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "STRING",
+     "widget": {
+      "name": "prompt"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "seed",
+     "locked": null,
+     "name": "seed",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "INT",
+     "widget": {
+      "name": "seed"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "model",
+     "locked": null,
+     "name": "model",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "COMBO",
+     "widget": {
+      "name": "model"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "videos",
+     "locked": null,
+     "name": "videos",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "INT",
+     "widget": {
+      "name": "videos"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "video",
+     "locked": null,
+     "name": "video",
+     "nameLocked": null,
+     "removable": null,
+     "shape": 6,
+     "type": "VIDEO",
+     "pos": null,
+     "slot_index": null,
+     "links": [
+      10
+     ]
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "report",
+     "locked": null,
+     "name": "report",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "STRING",
+     "pos": null,
+     "slot_index": null,
+     "links": [
+      12
+     ]
+    }
+   ],
+   "title": "Causal Forcing frame-wise 4-step (baseline)",
+   "properties": {
+    "Node name for S&R": "CausalForcingGenerate"
+   },
+   "widgets_values": [
+    "A red fox trotting through fresh snow in a quiet pine forest at sunrise, warm golden light filtering between the trees, the camera tracking alongside at ground level.",
+    101,
+    "fixed",
+    "cf_framewise_4step",
+    1
+   ],
+   "widgets_values_named": {
+    "prompt": "A red fox trotting through fresh snow in a quiet pine forest at sunrise, warm golden light filtering between the trees, the camera tracking alongside at ground level.",
+    "seed": 101,
+    "control_after_generate": "fixed",
+    "model": "cf_framewise_4step",
+    "videos": 1
+   }
+  },
+  {
+   "id": 4,
+   "type": "SaveVideo",
+   "pos": [
+    970,
+    130
+   ],
+   "size": [
+    270,
+    130
+   ],
+   "flags": {},
+   "order": 3,
+   "mode": 0,
+   "showAdvanced": null,
+   "inputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "video",
+     "locked": null,
+     "name": "video",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "VIDEO",
+     "pos": null,
+     "link": 9
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "filename_prefix",
+     "locked": null,
+     "name": "filename_prefix",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "format",
+     "locked": null,
+     "name": "format",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "codec",
+     "locked": null,
+     "name": "format.codec",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format.codec"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "encoding",
+     "locked": null,
+     "name": "format.codec.encoding",
+     "nameLocked": null,
+     "removable": null,
+     "shape": 7,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format.codec.encoding"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "codec",
+     "locked": null,
+     "name": "codec",
+     "nameLocked": null,
+     "removable": null,
+     "shape": 7,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "codec"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "video",
+     "locked": null,
+     "name": "video",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "VIDEO",
+     "pos": null,
+     "slot_index": null,
+     "links": null
+    }
+   ],
+   "title": "Save 2-step video",
+   "properties": {},
+   "widgets_values": [
+    "causalforcing/framewise_2step",
+    "mp4",
+    "h264",
+    "auto",
+    "auto"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "causalforcing/framewise_2step",
+    "format": "mp4",
+    "format.codec": "h264",
+    "format.codec.encoding": "auto",
+    "codec": "auto"
+   }
+  },
+  {
+   "id": 5,
+   "type": "SaveVideo",
+   "pos": [
+    970,
+    642
+   ],
+   "size": [
+    270,
+    130
+   ],
+   "flags": {},
+   "order": 5,
+   "mode": 0,
+   "showAdvanced": null,
+   "inputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "video",
+     "locked": null,
+     "name": "video",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "VIDEO",
+     "pos": null,
+     "link": 10
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "filename_prefix",
+     "locked": null,
+     "name": "filename_prefix",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "STRING",
+     "widget": {
+      "name": "filename_prefix"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "format",
+     "locked": null,
+     "name": "format",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "codec",
+     "locked": null,
+     "name": "format.codec",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format.codec"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "encoding",
+     "locked": null,
+     "name": "format.codec.encoding",
+     "nameLocked": null,
+     "removable": null,
+     "shape": 7,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "format.codec.encoding"
+     },
+     "link": null
+    },
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "codec",
+     "locked": null,
+     "name": "codec",
+     "nameLocked": null,
+     "removable": null,
+     "shape": 7,
+     "type": "COMFY_DYNAMICCOMBO_V3",
+     "widget": {
+      "name": "codec"
+     },
+     "link": null
+    }
+   ],
+   "outputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "video",
+     "locked": null,
+     "name": "video",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "VIDEO",
+     "pos": null,
+     "slot_index": null,
+     "links": null
+    }
+   ],
+   "title": "Save 4-step video",
+   "properties": {},
+   "widgets_values": [
+    "causalforcing/framewise_4step",
+    "mp4",
+    "h264",
+    "auto",
+    "auto"
+   ],
+   "widgets_values_named": {
+    "filename_prefix": "causalforcing/framewise_4step",
+    "format": "mp4",
+    "format.codec": "h264",
+    "format.codec.encoding": "auto",
+    "codec": "auto"
+   }
+  },
+  {
+   "id": 6,
+   "type": "PreviewAny",
+   "pos": [
+    970,
+    390
+   ],
+   "size": [
+    210,
+    122
+   ],
+   "flags": {},
+   "order": 4,
+   "mode": 0,
+   "showAdvanced": null,
+   "inputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "source",
+     "locked": null,
+     "name": "source",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "*",
+     "pos": null,
+     "link": 11
+    }
+   ],
+   "outputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "STRING",
+     "locked": null,
+     "name": "STRING",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "STRING",
+     "pos": null,
+     "slot_index": null,
+     "links": null
+    }
+   ],
+   "title": "2-step report",
+   "properties": {
+    "Node name for S&R": "PreviewAny"
+   },
+   "widgets_values": [],
+   "widgets_values_named": {}
+  },
+  {
+   "id": 7,
+   "type": "PreviewAny",
+   "pos": [
+    970,
+    902
+   ],
+   "size": [
+    210,
+    122
+   ],
+   "flags": {},
+   "order": 6,
+   "mode": 0,
+   "showAdvanced": null,
+   "inputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "source",
+     "locked": null,
+     "name": "source",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "*",
+     "pos": null,
+     "link": 12
+    }
+   ],
+   "outputs": [
+    {
+     "color_off": null,
+     "color_on": null,
+     "dir": null,
+     "label": null,
+     "localized_name": "STRING",
+     "locked": null,
+     "name": "STRING",
+     "nameLocked": null,
+     "removable": null,
+     "shape": null,
+     "type": "STRING",
+     "pos": null,
+     "slot_index": null,
+     "links": null
+    }
+   ],
+   "title": "4-step report",
+   "properties": {
+    "Node name for S&R": "PreviewAny"
+   },
+   "widgets_values": [],
+   "widgets_values_named": {}
+  }
+ ],
+ "links": [
+  [
+   7,
+   1,
+   0,
+   2,
+   0,
+   "CAUSALFORCING_RUNTIME"
+  ],
+  [
+   8,
+   1,
+   0,
+   3,
+   0,
+   "CAUSALFORCING_RUNTIME"
+  ],
+  [
+   9,
+   2,
+   0,
+   4,
+   0,
+   "VIDEO"
+  ],
+  [
+   10,
+   3,
+   0,
+   5,
+   0,
+   "VIDEO"
+  ],
+  [
+   11,
+   2,
+   1,
+   6,
+   0,
+   "STRING"
+  ],
+  [
+   12,
+   3,
+   1,
+   7,
+   0,
+   "STRING"
+  ]
+ ],
+ "floatingLinks": null,
+ "groups": [],
+ "definitions": null,
+ "config": {},
+ "extra": {
+  "ds": {
+   "scale": 0.9,
+   "offset": [
+    416,
+    110
+   ]
+  },
+  "reroutes": null
+ },
+ "version": 0.4
+}

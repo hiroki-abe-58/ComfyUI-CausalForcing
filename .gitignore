@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+_comfyui/
+/results/
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.mp4
+*.webm
+*.mkv
+*.log
+.env
+.env.*
+.claude/
+.DS_Store
+Thumbs.db
+# local runtime registration (contains machine paths)
+causalforcing.runtimes.json

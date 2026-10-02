@@ -1,0 +1,25 @@
+{
+ "note": "official inference.py (unchanged; weights_only=True, bf16 meta T5 build, capture of noise/latents/write_video input) vs this package runtime, prompt 1, seed 101",
+ "checks": {
+  "2step": {
+   "official_command": "python inference.py --config_path configs/causal_forcing_dmd_framewise_2step.yaml --checkpoint_path <ckpt> --data_path <one prompt> --use_ema --seed 101",
+   "initial_noise_identical": true,
+   "latents_identical": true,
+   "rgb_frames_uint8_identical": true,
+   "official_generator_forwards": 65,
+   "package_generator_forwards": 65,
+   "latents_sha256": "3da2419c106e8487d58189817fad6d93a7d6b623515ddb63ec8eb2ba6877dd3d",
+   "rgb_frames_sha256": "e58f26f0d0ea9be59b2922202d1d3917ff23156bb3d491a492d30be4bd810211"
+  },
+  "4step": {
+   "official_command": "python inference.py --config_path configs/causal_forcing_dmd_framewise.yaml --checkpoint_path <ckpt> --data_path <one prompt> --use_ema --seed 101",
+   "initial_noise_identical": true,
+   "latents_identical": true,
+   "rgb_frames_uint8_identical": true,
+   "official_generator_forwards": 105,
+   "package_generator_forwards": 105,
+   "latents_sha256": "346d56593b7e4235b32e0c74027aebd4ece9f7606001d6fa95d2ae70ef77de02",
+   "rgb_frames_sha256": "bdbd01a836941789568d035ae905232388e85ca9c3b7557bef5f408817822ddd"
+  }
+ }
+}

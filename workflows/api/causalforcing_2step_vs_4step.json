@@ -1,0 +1,97 @@
+{
+ "1": {
+  "class_type": "CausalForcingRuntime",
+  "inputs": {
+   "runtime_id": "wsl-causalforcing"
+  },
+  "_meta": {
+   "title": "Causal Forcing Runtime"
+  }
+ },
+ "2": {
+  "class_type": "CausalForcingGenerate",
+  "inputs": {
+   "runtime": [
+    "1",
+    0
+   ],
+   "prompt": "A red fox trotting through fresh snow in a quiet pine forest at sunrise, warm golden light filtering between the trees, the camera tracking alongside at ground level.",
+   "seed": 101,
+   "model": "cfpp_framewise_2step",
+   "videos": 1
+  },
+  "_meta": {
+   "title": "Causal Forcing++ frame-wise 2-step"
+  }
+ },
+ "3": {
+  "class_type": "CausalForcingGenerate",
+  "inputs": {
+   "runtime": [
+    "1",
+    0
+   ],
+   "prompt": "A red fox trotting through fresh snow in a quiet pine forest at sunrise, warm golden light filtering between the trees, the camera tracking alongside at ground level.",
+   "seed": 101,
+   "model": "cf_framewise_4step",
+   "videos": 1
+  },
+  "_meta": {
+   "title": "Causal Forcing frame-wise 4-step (baseline)"
+  }
+ },
+ "4": {
+  "class_type": "SaveVideo",
+  "inputs": {
+   "video": [
+    "2",
+    0
+   ],
+   "filename_prefix": "causalforcing/framewise_2step",
+   "format": "mp4",
+   "format.codec": "h264"
+  },
+  "_meta": {
+   "title": "Save 2-step video"
+  }
+ },
+ "5": {
+  "class_type": "SaveVideo",
+  "inputs": {
+   "video": [
+    "3",
+    0
+   ],
+   "filename_prefix": "causalforcing/framewise_4step",
+   "format": "mp4",
+   "format.codec": "h264"
+  },
+  "_meta": {
+   "title": "Save 4-step video"
+  }
+ },
+ "6": {
+  "class_type": "PreviewAny",
+  "inputs": {
+   "source": [
+    "2",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "2-step report"
+  }
+ },
+ "7": {
+  "class_type": "PreviewAny",
+  "inputs": {
+   "source": [
+    "3",
+    1
+   ]
+  },
+  "_meta": {
+   "title": "4-step report"
+  }
+ }
+}

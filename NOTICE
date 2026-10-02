@@ -1,0 +1,18 @@
+ComfyUI-CausalForcing
+Copyright 2026 hiroki-abe-58
+
+This product is an unofficial community integration. It is not affiliated
+with or endorsed by the Causal Forcing / Causal Forcing++ authors, Tsinghua
+University, Shengshu, the Self-Forcing, CausVid or Rolling Forcing authors,
+Alibaba (Wan), Hugging Face or Comfy Org.
+
+This repository contains no upstream source code and no model weights. At run
+time it imports an unmodified checkout of thu-ml/Causal-Forcing (Apache
+License 2.0) that the administrator installs separately, and the runtime
+loads Wan-AI/Wan2.1-T2V-1.3B and zhuhz22/Causal-Forcing weights (both
+published under Apache License 2.0) downloaded by the administrator. See
+docs/LICENSING.md.
+
+The process-control, configuration and test code is adapted from
+ComfyUI-MonarchRT (https://github.com/hiroki-abe-58/ComfyUI-MonarchRT),
+Copyright 2026 hiroki-abe-58, Apache License 2.0.

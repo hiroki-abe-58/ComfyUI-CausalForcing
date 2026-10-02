@@ -1,0 +1,753 @@
+{
+ "schema": "causalforcing-comfy-run-manifest/1",
+ "upstream": {
+  "repo": "https://github.com/thu-ml/Causal-Forcing",
+  "commit": "da3ddf1a590f30c9edc568e11c2f77170995c31c"
+ },
+ "weights": {
+  "zhuhz22/Causal-Forcing": {
+   "revision": "2f8eb8bb6eeb1238da9d13e5420d342a74d634a6",
+   "causal-forcing++/framewise-2step.pt": "8f899a016dffb9539788fac82c6200e43ef6e23b6e61ec6b885bb507a760ce42",
+   "framewise/causal_forcing.pt": "70cae8c3b0b7191fa9840b4f6fe8655ba0cf5c6520c87ba85a46b861c3735cd3"
+  },
+  "Wan-AI/Wan2.1-T2V-1.3B": "37ec512624d61f7aa208f7ea8140a131f93afc9a"
+ },
+ "hardware": {
+  "gpu": "NVIDIA GeForce RTX 5090 32 GB (shared with the Windows desktop)",
+  "driver": "595.95",
+  "host": "Windows 11 + WSL2 Ubuntu 24.04",
+  "wsl_memory_limit_gib": 31
+ },
+ "runner_sha256_prefix": "1e26dad62f91",
+ "prompts": {
+  "d5286c3e66599a9b77e039f5ec95901b18f8fdf67a90bc8701cbf782d5d5bfb1": "A red fox trotting through fresh snow in a quiet pine forest at sunrise, warm golden light filtering between the trees, the camera tracking alongside at ground level.",
+  "5c88a51523d22b77fae4d07858dfc8af88884efe75122293167908ef72e2faa4": "Ocean waves crashing against dark volcanic rocks on a stormy coastline, white spray bursting into the air, overcast sky, cinematic wide shot.",
+  "65c4a0d40b25f96c359395ba6b1c638b535b51330a672d02cb05d3df155fa778": "A rainy city street at night lit by neon signs, people with umbrellas walking past glowing shop windows, colorful reflections shimmering on the wet pavement."
+ },
+ "jobs": {
+  "set_2step": {
+   "profile": "cfpp_framewise_2step",
+   "mode": "t2v",
+   "upstream_commit": "da3ddf1a590f30c9edc568e11c2f77170995c31c",
+   "effective_config": {
+    "config_file": "causal_forcing_dmd_framewise_2step.yaml",
+    "checkpoint_key": "generator_ema",
+    "denoising_step_list": [
+     1000,
+     500
+    ],
+    "denoising_step_list_first_chunk": [
+     1000,
+     750,
+     500,
+     250
+    ],
+    "warped_steps": [
+     1000.0,
+     833.333
+    ],
+    "warped_first_chunk": [
+     1000.0,
+     937.5,
+     833.333,
+     625.0
+    ],
+    "warp_denoising_step": true,
+    "num_frame_per_block": 1,
+    "independent_first_frame": false,
+    "context_noise": 0,
+    "timestep_shift": 5.0,
+    "offload_text_encoder": true
+   },
+   "weights": {
+    "checkpoint_bytes": 5676220819,
+    "checkpoint_keys": [
+     "generator_ema"
+    ],
+    "used_key": "generator_ema",
+    "tensors": 825,
+    "generator_tensors": 825,
+    "parameters": 1418996800,
+    "fsdp_prefixed_keys_mapped": 825,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "probe_tensor": "model.blocks.0.self_attn.q.weight",
+    "probe_changed_from_base": true,
+    "probe_equals_checkpoint": true
+   },
+   "versions": {
+    "python": "3.10.22",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "device": "NVIDIA GeForce RTX 5090",
+    "capability": "12.0",
+    "flash_attn": "2.8.3"
+   },
+   "model_load_seconds": 35.071,
+   "process_seconds": 191.909,
+   "host_peak_rss_bytes": 14812356608,
+   "videos": [
+    {
+     "index": 0,
+     "file": "videos/00.mp4",
+     "sha256": "78104997770f057e528eee74b6cf8ea67cc86e1614abad4ce157178ca394a9e1",
+     "mode": "t2v",
+     "seed": 101,
+     "prompt_sha256": "d5286c3e66599a9b77e039f5ec95901b18f8fdf67a90bc8701cbf782d5d5bfb1",
+     "image_sha256": null,
+     "initial_noise_sha256": "569ec5173869737e4c54e83cf0cc80e8db77c43cf3e5360b648083aa6333dbd2",
+     "latents_sha256": "3da2419c106e8487d58189817fad6d93a7d6b623515ddb63ec8eb2ba6877dd3d",
+     "rgb_frames_sha256": "e58f26f0d0ea9be59b2922202d1d3917ff23156bb3d491a492d30be4bd810211",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 70.197,
+      "text_encode": 59.274,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 6.797,
+      "generator_denoise": 4.726,
+      "generator_context": 2.071,
+      "first_block_denoise": 0.638,
+      "vae_decode": 3.853,
+      "mp4_write": 0.555
+     },
+     "generator_forwards": {
+      "denoise": 44,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 44,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 2
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 16259219456,
+     "device_used_bytes_after": 18150391808
+    },
+    {
+     "index": 1,
+     "file": "videos/01.mp4",
+     "sha256": "78104997770f057e528eee74b6cf8ea67cc86e1614abad4ce157178ca394a9e1",
+     "mode": "t2v",
+     "seed": 101,
+     "prompt_sha256": "d5286c3e66599a9b77e039f5ec95901b18f8fdf67a90bc8701cbf782d5d5bfb1",
+     "image_sha256": null,
+     "initial_noise_sha256": "569ec5173869737e4c54e83cf0cc80e8db77c43cf3e5360b648083aa6333dbd2",
+     "latents_sha256": "3da2419c106e8487d58189817fad6d93a7d6b623515ddb63ec8eb2ba6877dd3d",
+     "rgb_frames_sha256": "e58f26f0d0ea9be59b2922202d1d3917ff23156bb3d491a492d30be4bd810211",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 13.307,
+      "text_encode": 2.838,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 7.048,
+      "generator_denoise": 4.887,
+      "generator_context": 2.161,
+      "first_block_denoise": 0.442,
+      "vae_decode": 3.226,
+      "mp4_write": 0.539
+     },
+     "generator_forwards": {
+      "denoise": 44,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 44,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 2
+      }
+     },
+     "cuda_max_allocated_bytes": 13670912000,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 2,
+     "file": "videos/02.mp4",
+     "sha256": "9daac3c273612aea253438714a4f7a7531b9d6c48c7e5c15a7d7244ca7accd7b",
+     "mode": "t2v",
+     "seed": 2026,
+     "prompt_sha256": "d5286c3e66599a9b77e039f5ec95901b18f8fdf67a90bc8701cbf782d5d5bfb1",
+     "image_sha256": null,
+     "initial_noise_sha256": "a2f64138f7b49f2eec46b51fa3e6274f1ca78387f93b1bbae5830a7d63fb817a",
+     "latents_sha256": "f0404fc9a993b7d6bfd2307603fb3c793606ce3e072eac29f561547156467d60",
+     "rgb_frames_sha256": "b0457cf8a5deff38cc24d0e92c5df61413139b69f9b569317196dd2746072544",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 11.466,
+      "text_encode": 1.459,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 6.568,
+      "generator_denoise": 4.466,
+      "generator_context": 2.102,
+      "first_block_denoise": 0.441,
+      "vae_decode": 3.233,
+      "mp4_write": 0.509
+     },
+     "generator_forwards": {
+      "denoise": 44,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 44,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 2
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 3,
+     "file": "videos/03.mp4",
+     "sha256": "41da3c075704d2eb71fe2388d013896f2dd22168acc61a811072456b427a4a43",
+     "mode": "t2v",
+     "seed": 101,
+     "prompt_sha256": "5c88a51523d22b77fae4d07858dfc8af88884efe75122293167908ef72e2faa4",
+     "image_sha256": null,
+     "initial_noise_sha256": "569ec5173869737e4c54e83cf0cc80e8db77c43cf3e5360b648083aa6333dbd2",
+     "latents_sha256": "4b3f3620b8b9e7f1d2e16b7e5e2d415d586a95944174ac543f7d70c72afacc06",
+     "rgb_frames_sha256": "14ec8f2d8915d2a2f2934c79a0d5fc6e2fa9115e454773415859255e8646441b",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 11.618,
+      "text_encode": 1.475,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 6.695,
+      "generator_denoise": 4.54,
+      "generator_context": 2.156,
+      "first_block_denoise": 0.389,
+      "vae_decode": 3.238,
+      "mp4_write": 0.438
+     },
+     "generator_forwards": {
+      "denoise": 44,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 44,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 2
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 4,
+     "file": "videos/04.mp4",
+     "sha256": "3b72c899d3b86d5c4c8e4d53252ada5a92e773c305d91d81730d2a1fc342e9aa",
+     "mode": "t2v",
+     "seed": 2026,
+     "prompt_sha256": "5c88a51523d22b77fae4d07858dfc8af88884efe75122293167908ef72e2faa4",
+     "image_sha256": null,
+     "initial_noise_sha256": "a2f64138f7b49f2eec46b51fa3e6274f1ca78387f93b1bbae5830a7d63fb817a",
+     "latents_sha256": "a3b9726da054f533b0078250c43aff753d131762e7f51b79dcf7ee717c3e4227",
+     "rgb_frames_sha256": "86de91082cf90383ba34a6b80815450b27ea346d0dc7677dd5a626b5aa009bed",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 12.33,
+      "text_encode": 1.792,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 7.051,
+      "generator_denoise": 4.769,
+      "generator_context": 2.282,
+      "first_block_denoise": 0.418,
+      "vae_decode": 3.229,
+      "mp4_write": 0.438
+     },
+     "generator_forwards": {
+      "denoise": 44,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 44,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 2
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 5,
+     "file": "videos/05.mp4",
+     "sha256": "745b03ceb458e7b57f655fc747e1c3e365e8cf4b664508c31099a3f269469b1d",
+     "mode": "t2v",
+     "seed": 101,
+     "prompt_sha256": "65c4a0d40b25f96c359395ba6b1c638b535b51330a672d02cb05d3df155fa778",
+     "image_sha256": null,
+     "initial_noise_sha256": "569ec5173869737e4c54e83cf0cc80e8db77c43cf3e5360b648083aa6333dbd2",
+     "latents_sha256": "7605837025762cce81423cc7180ddcf673612f254f01a185e1982d2d3ff62a14",
+     "rgb_frames_sha256": "2082cdcb527bff4ecf61faf9773ef1dc912da5b27d97297fefc4c741dec06bff",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 12.296,
+      "text_encode": 1.487,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 7.317,
+      "generator_denoise": 5.025,
+      "generator_context": 2.292,
+      "first_block_denoise": 0.392,
+      "vae_decode": 3.251,
+      "mp4_write": 0.418
+     },
+     "generator_forwards": {
+      "denoise": 44,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 44,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 2
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 6,
+     "file": "videos/06.mp4",
+     "sha256": "c2c4201ccdac6a69a494d0e455a4be1e78708b0a11393665403779be00122701",
+     "mode": "t2v",
+     "seed": 2026,
+     "prompt_sha256": "65c4a0d40b25f96c359395ba6b1c638b535b51330a672d02cb05d3df155fa778",
+     "image_sha256": null,
+     "initial_noise_sha256": "a2f64138f7b49f2eec46b51fa3e6274f1ca78387f93b1bbae5830a7d63fb817a",
+     "latents_sha256": "bc7e9456ca42b547b31ec60e47f2fba771ccbb53efa7f7fc00ad2599cfa967de",
+     "rgb_frames_sha256": "3bf00e1ef537e453ac4b68084e949fbe9720321ab9dceae029539fd575d31232",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 12.86,
+      "text_encode": 1.401,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 7.636,
+      "generator_denoise": 5.165,
+      "generator_context": 2.471,
+      "first_block_denoise": 0.419,
+      "vae_decode": 3.477,
+      "mp4_write": 0.461
+     },
+     "generator_forwards": {
+      "denoise": 44,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 44,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 2
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    }
+   ]
+  },
+  "set_4step": {
+   "profile": "cf_framewise_4step",
+   "mode": "t2v",
+   "upstream_commit": "da3ddf1a590f30c9edc568e11c2f77170995c31c",
+   "effective_config": {
+    "config_file": "causal_forcing_dmd_framewise.yaml",
+    "checkpoint_key": "generator_ema",
+    "denoising_step_list": [
+     1000,
+     750,
+     500,
+     250
+    ],
+    "denoising_step_list_first_chunk": null,
+    "warped_steps": [
+     1000.0,
+     937.5,
+     833.333,
+     625.0
+    ],
+    "warped_first_chunk": null,
+    "warp_denoising_step": true,
+    "num_frame_per_block": 1,
+    "independent_first_frame": false,
+    "context_noise": 0,
+    "timestep_shift": 5.0,
+    "offload_text_encoder": true
+   },
+   "weights": {
+    "checkpoint_bytes": 5676220819,
+    "checkpoint_keys": [
+     "generator_ema"
+    ],
+    "used_key": "generator_ema",
+    "tensors": 825,
+    "generator_tensors": 825,
+    "parameters": 1418996800,
+    "fsdp_prefixed_keys_mapped": 825,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "probe_tensor": "model.blocks.0.self_attn.q.weight",
+    "probe_changed_from_base": true,
+    "probe_equals_checkpoint": true
+   },
+   "versions": {
+    "python": "3.10.22",
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "device": "NVIDIA GeForce RTX 5090",
+    "capability": "12.0",
+    "flash_attn": "2.8.3"
+   },
+   "model_load_seconds": 42.107,
+   "process_seconds": 226.093,
+   "host_peak_rss_bytes": 14790795264,
+   "videos": [
+    {
+     "index": 0,
+     "file": "videos/00.mp4",
+     "sha256": "07e673fd7a232c22932eca0eb8d13251c981ea460adf2aaf7891608ceb6923dc",
+     "mode": "t2v",
+     "seed": 101,
+     "prompt_sha256": "d5286c3e66599a9b77e039f5ec95901b18f8fdf67a90bc8701cbf782d5d5bfb1",
+     "image_sha256": null,
+     "initial_noise_sha256": "569ec5173869737e4c54e83cf0cc80e8db77c43cf3e5360b648083aa6333dbd2",
+     "latents_sha256": "346d56593b7e4235b32e0c74027aebd4ece9f7606001d6fa95d2ae70ef77de02",
+     "rgb_frames_sha256": "bdbd01a836941789568d035ae905232388e85ca9c3b7557bef5f408817822ddd",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 72.389,
+      "text_encode": 57.834,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 10.826,
+      "generator_denoise": 8.861,
+      "generator_context": 1.965,
+      "first_block_denoise": 0.549,
+      "vae_decode": 3.337,
+      "mp4_write": 1.014
+     },
+     "generator_forwards": {
+      "denoise": 84,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 84,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 4
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 16259219456,
+     "device_used_bytes_after": 18150391808
+    },
+    {
+     "index": 1,
+     "file": "videos/01.mp4",
+     "sha256": "07e673fd7a232c22932eca0eb8d13251c981ea460adf2aaf7891608ceb6923dc",
+     "mode": "t2v",
+     "seed": 101,
+     "prompt_sha256": "d5286c3e66599a9b77e039f5ec95901b18f8fdf67a90bc8701cbf782d5d5bfb1",
+     "image_sha256": null,
+     "initial_noise_sha256": "569ec5173869737e4c54e83cf0cc80e8db77c43cf3e5360b648083aa6333dbd2",
+     "latents_sha256": "346d56593b7e4235b32e0c74027aebd4ece9f7606001d6fa95d2ae70ef77de02",
+     "rgb_frames_sha256": "bdbd01a836941789568d035ae905232388e85ca9c3b7557bef5f408817822ddd",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 18.054,
+      "text_encode": 2.322,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 11.89,
+      "generator_denoise": 9.055,
+      "generator_context": 2.835,
+      "first_block_denoise": 0.504,
+      "vae_decode": 3.229,
+      "mp4_write": 0.495
+     },
+     "generator_forwards": {
+      "denoise": 84,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 84,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 4
+      }
+     },
+     "cuda_max_allocated_bytes": 13670912000,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 2,
+     "file": "videos/02.mp4",
+     "sha256": "84d95c750c09fd01e890aaaf010d2e0f190fc657bd2dd971efdb18acc2804d03",
+     "mode": "t2v",
+     "seed": 2026,
+     "prompt_sha256": "d5286c3e66599a9b77e039f5ec95901b18f8fdf67a90bc8701cbf782d5d5bfb1",
+     "image_sha256": null,
+     "initial_noise_sha256": "a2f64138f7b49f2eec46b51fa3e6274f1ca78387f93b1bbae5830a7d63fb817a",
+     "latents_sha256": "c854a6f97e8929c433011ab3909f8636e3a3ee0461e46ed7f3844e5274065750",
+     "rgb_frames_sha256": "03d47724cb67218db359a9985a4378b14826ff991b2e97ba5e15552b715005ae",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 16.45,
+      "text_encode": 1.513,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 11.131,
+      "generator_denoise": 8.941,
+      "generator_context": 2.189,
+      "first_block_denoise": 0.312,
+      "vae_decode": 3.241,
+      "mp4_write": 0.487
+     },
+     "generator_forwards": {
+      "denoise": 84,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 84,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 4
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 3,
+     "file": "videos/03.mp4",
+     "sha256": "3223bf0f109980ce267ace35870f8c647f0a7309ef222f9ffa8b3cb784d3ca16",
+     "mode": "t2v",
+     "seed": 101,
+     "prompt_sha256": "5c88a51523d22b77fae4d07858dfc8af88884efe75122293167908ef72e2faa4",
+     "image_sha256": null,
+     "initial_noise_sha256": "569ec5173869737e4c54e83cf0cc80e8db77c43cf3e5360b648083aa6333dbd2",
+     "latents_sha256": "9199dd0350d8c5d8a793bd7b95d2605b6304ce12e81ecae8b0fe9e1da7351cb4",
+     "rgb_frames_sha256": "0eedd6abbf589c588c4f6bf3ea26ed583f8b4a495af30b6e2bd994d6db025c78",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 15.445,
+      "text_encode": 1.364,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 10.476,
+      "generator_denoise": 8.506,
+      "generator_context": 1.97,
+      "first_block_denoise": 0.453,
+      "vae_decode": 3.246,
+      "mp4_write": 0.714
+     },
+     "generator_forwards": {
+      "denoise": 84,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 84,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 4
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 4,
+     "file": "videos/04.mp4",
+     "sha256": "064b1f356aa5fda5b972423d7c3e83169cbe6eeb28668e4bc05c3f9cd754a6ce",
+     "mode": "t2v",
+     "seed": 2026,
+     "prompt_sha256": "5c88a51523d22b77fae4d07858dfc8af88884efe75122293167908ef72e2faa4",
+     "image_sha256": null,
+     "initial_noise_sha256": "a2f64138f7b49f2eec46b51fa3e6274f1ca78387f93b1bbae5830a7d63fb817a",
+     "latents_sha256": "8d7c3e641b4e18ebacd8ff8f6cbc7cd09344756d9422c274fd19632e6f3254c1",
+     "rgb_frames_sha256": "7c38117ca358475ea82a538f268c27d51ec979a4565cc09a20d5cd8f1e17a9df",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 15.588,
+      "text_encode": 1.564,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 10.437,
+      "generator_denoise": 8.3,
+      "generator_context": 2.137,
+      "first_block_denoise": 0.461,
+      "vae_decode": 3.254,
+      "mp4_write": 0.484
+     },
+     "generator_forwards": {
+      "denoise": 84,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 84,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 4
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 5,
+     "file": "videos/05.mp4",
+     "sha256": "bc6964d7b5829d73e2a1da3fa79f30897e2d2e18ebe34182fc7452dfd398fc3f",
+     "mode": "t2v",
+     "seed": 101,
+     "prompt_sha256": "65c4a0d40b25f96c359395ba6b1c638b535b51330a672d02cb05d3df155fa778",
+     "image_sha256": null,
+     "initial_noise_sha256": "569ec5173869737e4c54e83cf0cc80e8db77c43cf3e5360b648083aa6333dbd2",
+     "latents_sha256": "96d406287848e291137c17ea285960575a5d11d475adc5f3668841097a12c504",
+     "rgb_frames_sha256": "be34e822fc225cd0374a4bd1ff8283cd307d9cc072c237acc1b8e68c56f7e8a7",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 16.056,
+      "text_encode": 1.452,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 11.014,
+      "generator_denoise": 8.866,
+      "generator_context": 2.149,
+      "first_block_denoise": 0.346,
+      "vae_decode": 3.257,
+      "mp4_write": 0.47
+     },
+     "generator_forwards": {
+      "denoise": 84,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 84,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 4
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    },
+    {
+     "index": 6,
+     "file": "videos/06.mp4",
+     "sha256": "1145ae5289c659065c85df063780cd9d0cfe3079e8c8679065fc2daeb7da2ca6",
+     "mode": "t2v",
+     "seed": 2026,
+     "prompt_sha256": "65c4a0d40b25f96c359395ba6b1c638b535b51330a672d02cb05d3df155fa778",
+     "image_sha256": null,
+     "initial_noise_sha256": "a2f64138f7b49f2eec46b51fa3e6274f1ca78387f93b1bbae5830a7d63fb817a",
+     "latents_sha256": "31e392fcc49cedbab9fcce692c0f288243fd81500249878505ca77fac7ae016e",
+     "rgb_frames_sha256": "6937cf69e826ced4384e3930c75806e380c7bf4310f8073207ddfcbb608dc673",
+     "latent_frames": 21,
+     "rgb_frames": 81,
+     "height": 480,
+     "width": 832,
+     "fps": 16,
+     "seconds": {
+      "inference_total": 16.174,
+      "text_encode": 1.485,
+      "vae_encode_image": 0.0,
+      "generator_forwards": 10.854,
+      "generator_denoise": 8.625,
+      "generator_context": 2.23,
+      "first_block_denoise": 0.359,
+      "vae_decode": 3.272,
+      "mp4_write": 0.515
+     },
+     "generator_forwards": {
+      "denoise": 84,
+      "context": 21,
+      "first_block_denoise": 4,
+      "expected": {
+       "denoise": 84,
+       "context": 21,
+       "blocks": 21,
+       "first_block_steps": 4,
+       "steps_per_block": 4
+      }
+     },
+     "cuda_max_allocated_bytes": 13671436288,
+     "cuda_max_reserved_bytes": 18360565760,
+     "device_used_bytes_after": 20251738112
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "schema_version": 1,
+ "runtimes": {
+  "wsl-causalforcing": {
+   "description": "WSL2 Ubuntu, venv with torch 2.8.0+cu128 and flash-attn 2.8.3",
+   "kind": "wsl",
+   "distro": "Ubuntu-24.04",
+   "python": "/opt/causalforcing/venv/bin/python",
+   "upstream_dir": "/opt/causalforcing/Causal-Forcing",
+   "models_dir": "/opt/causalforcing/models",
+   "checkpoints": {
+    "cfpp_framewise_2step": "/opt/causalforcing/models/checkpoints/causal-forcing++/framewise-2step.pt",
+    "cf_framewise_4step": "/opt/causalforcing/models/checkpoints/framewise/causal_forcing.pt"
+   },
+   "env": {
+    "TRITON_CACHE_DIR": "/opt/causalforcing/cache/triton",
+    "TORCHINDUCTOR_CACHE_DIR": "/opt/causalforcing/cache/inductor",
+    "XDG_CACHE_HOME": "/opt/causalforcing/cache/xdg",
+    "HF_HOME": "/opt/causalforcing/cache/hf"
+   },
+   "offload_text_encoder": true,
+   "timeout_minutes": 60
+  },
+  "linux-local": {
+   "description": "ComfyUI itself runs on Linux; same machine, separate venv",
+   "kind": "posix",
+   "python": "/opt/causalforcing/venv/bin/python",
+   "upstream_dir": "/opt/causalforcing/Causal-Forcing",
+   "models_dir": "/opt/causalforcing/models",
+   "checkpoints": {"cfpp_framewise_2step": "/opt/causalforcing/models/checkpoints/causal-forcing++/framewise-2step.pt"},
+   "offload_text_encoder": true,
+   "timeout_minutes": 60
+  }
+ }
+}

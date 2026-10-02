@@ -1,0 +1,30 @@
+# Reference runtime environment (verified: WSL2 Ubuntu 24.04, Python 3.10.22, NVIDIA RTX 5090 / SM 12.0, driver 595.95).
+# This is what the runtime venv contained when the published results were produced; it is NOT installed into ComfyUI.
+#
+#   python -m pip install --index-url https://download.pytorch.org/whl/cu128 torch==2.8.0+cu128 torchvision==0.23.0+cu128
+#   python -m pip install -r requirements-reference.txt
+#
+# One wheel comes from a GitHub release (check the sha256 before installing):
+#   flash-attn 2.8.3 (upstream cross-attention requires flash-attn 2; there is no SDPA fallback in that code path)
+#     https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3%2Bcu12torch2.8cxx11abiTRUE-cp310-cp310-linux_x86_64.whl
+#     sha256 75c51f34bb93c5a4438d6b767547ca6c22a9bfc6b29b5646dda98e943cd75d99
+# torch 2.8.0+cu128 bundles triton 3.4.0 (not needed for inference with these models).
+numpy==1.24.4
+diffusers==0.31.0
+transformers==4.49.0
+tokenizers==0.21.4
+huggingface-hub==0.36.2
+safetensors==0.8.0
+sentencepiece==0.2.2
+omegaconf==2.3.1
+easydict==1.13
+einops==0.8.2
+ftfy==6.3.1
+regex==2026.9.29
+av==13.1.0
+imageio==2.38.0
+imageio-ffmpeg==0.6.0
+scipy==1.15.3
+pillow==12.3.0
+psutil==7.2.2
+tqdm==4.70.1

@@ -1,0 +1,251 @@
+{
+ "port": 57281,
+ "steps": {
+  "generate": {
+   "status": "success",
+   "wall_s": 135.4,
+   "saved": [
+    "cfpp_framewise_2step_00001_.mp4",
+    "cfpp_framewise_2step_00002_.mp4"
+   ],
+   "decoded": [
+    {
+     "frames": 81,
+     "width": 832,
+     "height": 480,
+     "rate": 16.0,
+     "codec": "h264"
+    },
+    {
+     "frames": 81,
+     "width": 832,
+     "height": 480,
+     "rate": 16.0,
+     "codec": "h264"
+    }
+   ],
+   "decode_ok": true,
+   "forwards_ok": true,
+   "forwards": [
+    {
+     "denoise": 44,
+     "context": 21,
+     "first_block_denoise": 4,
+     "expected": {
+      "denoise": 44,
+      "context": 21,
+      "blocks": 21,
+      "first_block_steps": 4,
+      "steps_per_block": 2
+     }
+    },
+    {
+     "denoise": 44,
+     "context": 21,
+     "first_block_denoise": 4,
+     "expected": {
+      "denoise": 44,
+      "context": 21,
+      "blocks": 21,
+      "first_block_steps": 4,
+      "steps_per_block": 2
+     }
+    }
+   ],
+   "report_excerpt": {
+    "model": "cfpp_framewise_2step",
+    "mode": "t2v",
+    "model_load_seconds": 33.483,
+    "wall_seconds": 134.1,
+    "upstream_commit": "da3ddf1a590f30c9edc568e11c2f77170995c31c"
+   },
+   "per_video_seconds": [
+    {
+     "inference_total": 69.09,
+     "text_encode": 57.988,
+     "vae_encode_image": 0.0,
+     "generator_forwards": 6.946,
+     "generator_denoise": 4.832,
+     "generator_context": 2.114,
+     "first_block_denoise": 0.701,
+     "vae_decode": 3.613,
+     "mp4_write": 0.578
+    },
+    {
+     "inference_total": 12.516,
+     "text_encode": 2.443,
+     "vae_encode_image": 0.0,
+     "generator_forwards": 6.57,
+     "generator_denoise": 4.516,
+     "generator_context": 2.054,
+     "first_block_denoise": 0.389,
+     "vae_decode": 3.232,
+     "mp4_write": 0.473
+    }
+   ]
+  },
+  "i2v": {
+   "status": "success",
+   "mode": "i2v",
+   "decoded": [
+    {
+     "frames": 81,
+     "width": 832,
+     "height": 480,
+     "rate": 16.0,
+     "codec": "h264"
+    }
+   ],
+   "forwards": [
+    {
+     "denoise": 42,
+     "context": 21,
+     "first_block_denoise": 4,
+     "expected": {
+      "denoise": 42,
+      "context": 21,
+      "blocks": 20,
+      "first_block_steps": 4,
+      "steps_per_block": 2
+     }
+    }
+   ],
+   "seconds": [
+    {
+     "inference_total": 69.675,
+     "text_encode": 59.692,
+     "vae_encode_image": 0.257,
+     "generator_forwards": 6.398,
+     "generator_denoise": 4.213,
+     "generator_context": 2.185,
+     "first_block_denoise": 0.412,
+     "vae_decode": 3.267,
+     "mp4_write": 0.43
+    }
+   ]
+  },
+  "doctor": {
+   "status": "success",
+   "overall": "ok",
+   "checks": [
+    [
+     "upstream_commit",
+     "ok"
+    ],
+    [
+     "upstream_files",
+     "ok"
+    ],
+    [
+     "model_files",
+     "ok"
+    ],
+    [
+     "checkpoints",
+     "ok"
+    ],
+    [
+     "cuda",
+     "ok"
+    ],
+    [
+     "flash_attn_kernel",
+     "ok"
+    ],
+    [
+     "import:diffusers",
+     "ok"
+    ],
+    [
+     "import:transformers",
+     "ok"
+    ],
+    [
+     "import:omegaconf",
+     "ok"
+    ],
+    [
+     "import:av",
+     "ok"
+    ],
+    [
+     "import:einops",
+     "ok"
+    ],
+    [
+     "import:torchvision",
+     "ok"
+    ],
+    [
+     "import:PIL",
+     "ok"
+    ]
+   ],
+   "note": "re-run after fixing one upstream hash (inference.py, CRLF vs LF); the first run reported upstream_files: fail"
+  },
+  "cancel": {
+   "status": "error",
+   "messages": [
+    "execution_interrupted"
+   ],
+   "error_excerpt": null,
+   "wall_s": 105.4,
+   "job_dir": "job-20261003-005504-c3348650795d",
+   "stop_report": {
+    "job_dir_name": "job-20261003-005504-c3348650795d",
+    "status": "not_running"
+   },
+   "leftover_processes": [],
+   "gpu_used_mib_after": 2177,
+   "gpu_back_to_idle": true,
+   "expected": "interrupted"
+  },
+  "timeout": {
+   "status": "error",
+   "messages": [
+    "execution_error"
+   ],
+   "error_excerpt": "runtime job exceeded 60 s\n",
+   "wall_s": 68.5,
+   "job_dir": "job-20261003-005649-54ce3151e0b6",
+   "stop_report": {
+    "job_dir_name": "job-20261003-005649-54ce3151e0b6",
+    "status": "not_running"
+   },
+   "leftover_processes": [],
+   "gpu_used_mib_after": 2177,
+   "gpu_back_to_idle": true,
+   "expected": "error"
+  },
+  "error": {
+   "status": "error",
+   "messages": [
+    "execution_error"
+   ],
+   "error_excerpt": "runtime job failed (exit 3): FileNotFoundError: checkpoint not found\n",
+   "wall_s": 8.1,
+   "job_dir": "job-20261003-005757-429a168e0d30",
+   "stop_report": {
+    "job_dir_name": "job-20261003-005757-429a168e0d30",
+    "status": "not_running"
+   },
+   "leftover_processes": [],
+   "gpu_used_mib_after": 2177,
+   "gpu_back_to_idle": true,
+   "expected": "error"
+  }
+ },
+ "gpu_idle_mib_before": 2167,
+ "nodes_registered": {
+  "CausalForcingRuntime": true,
+  "CausalForcingGenerate": true,
+  "CausalForcingDoctor": true
+ },
+ "runtime_choices": [
+  "e2e-missing-checkpoint",
+  "e2e-timeout",
+  "wsl-causalforcing"
+ ],
+ "comfyui_stopped": true,
+ "gpu_idle_mib_after": 2177
+}

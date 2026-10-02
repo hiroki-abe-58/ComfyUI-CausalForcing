@@ -1,0 +1,476 @@
+{
+ "decode": {
+  "cfpp_framewise_2step/00": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cfpp_framewise_2step/01": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cfpp_framewise_2step/02": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cfpp_framewise_2step/03": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cfpp_framewise_2step/04": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cfpp_framewise_2step/05": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cfpp_framewise_2step/06": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cf_framewise_4step/00": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cf_framewise_4step/01": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cf_framewise_4step/02": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cf_framewise_4step/03": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cf_framewise_4step/04": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cf_framewise_4step/05": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  },
+  "cf_framewise_4step/06": {
+   "codec": "h264",
+   "width": 832,
+   "height": 480,
+   "rate": 16.0,
+   "decoded_frames": 81,
+   "ok": true
+  }
+ },
+ "jobs": {
+  "cfpp_framewise_2step": {
+   "warm_n": 6,
+   "model_load_s": 35.071,
+   "process_s": 191.909,
+   "first_video": {
+    "inference_total": 70.197,
+    "text_encode": 59.274,
+    "vae_encode_image": 0.0,
+    "generator_forwards": 6.797,
+    "generator_denoise": 4.726,
+    "generator_context": 2.071,
+    "first_block_denoise": 0.638,
+    "vae_decode": 3.853,
+    "mp4_write": 0.555
+   },
+   "generator": {
+    "mean": 7.053,
+    "min": 6.568,
+    "max": 7.636,
+    "values": [
+     7.048,
+     6.568,
+     6.695,
+     7.051,
+     7.317,
+     7.636
+    ]
+   },
+   "generator_denoise": {
+    "mean": 4.809,
+    "min": 4.466,
+    "max": 5.165,
+    "values": [
+     4.887,
+     4.466,
+     4.54,
+     4.769,
+     5.025,
+     5.165
+    ]
+   },
+   "generator_context": {
+    "mean": 2.244,
+    "min": 2.102,
+    "max": 2.471,
+    "values": [
+     2.161,
+     2.102,
+     2.156,
+     2.282,
+     2.292,
+     2.471
+    ]
+   },
+   "first_block_denoise": {
+    "mean": 0.417,
+    "min": 0.389,
+    "max": 0.442,
+    "values": [
+     0.442,
+     0.441,
+     0.389,
+     0.418,
+     0.392,
+     0.419
+    ]
+   },
+   "vae_decode": {
+    "mean": 3.276,
+    "min": 3.226,
+    "max": 3.477,
+    "values": [
+     3.226,
+     3.233,
+     3.238,
+     3.229,
+     3.251,
+     3.477
+    ]
+   },
+   "text_encode": {
+    "mean": 1.742,
+    "min": 1.401,
+    "max": 2.838,
+    "values": [
+     2.838,
+     1.459,
+     1.475,
+     1.792,
+     1.487,
+     1.401
+    ]
+   },
+   "inference_total": {
+    "mean": 12.313,
+    "min": 11.466,
+    "max": 13.307,
+    "values": [
+     13.307,
+     11.466,
+     11.618,
+     12.33,
+     12.296,
+     12.86
+    ]
+   },
+   "forwards": {
+    "denoise": 44,
+    "context": 21,
+    "first_block_denoise": 4,
+    "expected": {
+     "denoise": 44,
+     "context": 21,
+     "blocks": 21,
+     "first_block_steps": 4,
+     "steps_per_block": 2
+    }
+   },
+   "cuda_max_allocated_gib": 12.73251724243164,
+   "cuda_max_reserved_gib": 17.099609375,
+   "nvidia_smi_max_used_mib_whole_gpu": 20323,
+   "host_peak_rss_gib": 13.795082092285156,
+   "weights": {
+    "checkpoint_bytes": 5676220819,
+    "checkpoint_keys": [
+     "generator_ema"
+    ],
+    "used_key": "generator_ema",
+    "tensors": 825,
+    "generator_tensors": 825,
+    "parameters": 1418996800,
+    "fsdp_prefixed_keys_mapped": 825,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "probe_tensor": "model.blocks.0.self_attn.q.weight",
+    "probe_changed_from_base": true,
+    "probe_equals_checkpoint": true
+   },
+   "effective_config": {
+    "config_file": "causal_forcing_dmd_framewise_2step.yaml",
+    "checkpoint_key": "generator_ema",
+    "denoising_step_list": [
+     1000,
+     500
+    ],
+    "denoising_step_list_first_chunk": [
+     1000,
+     750,
+     500,
+     250
+    ],
+    "warped_steps": [
+     1000.0,
+     833.333
+    ],
+    "warped_first_chunk": [
+     1000.0,
+     937.5,
+     833.333,
+     625.0
+    ],
+    "warp_denoising_step": true,
+    "num_frame_per_block": 1,
+    "independent_first_frame": false,
+    "context_noise": 0,
+    "timestep_shift": 5.0,
+    "offload_text_encoder": true
+   },
+   "warm_repeat_identical": true
+  },
+  "cf_framewise_4step": {
+   "warm_n": 6,
+   "model_load_s": 42.107,
+   "process_s": 226.093,
+   "first_video": {
+    "inference_total": 72.389,
+    "text_encode": 57.834,
+    "vae_encode_image": 0.0,
+    "generator_forwards": 10.826,
+    "generator_denoise": 8.861,
+    "generator_context": 1.965,
+    "first_block_denoise": 0.549,
+    "vae_decode": 3.337,
+    "mp4_write": 1.014
+   },
+   "generator": {
+    "mean": 10.967,
+    "min": 10.437,
+    "max": 11.89,
+    "values": [
+     11.89,
+     11.131,
+     10.476,
+     10.437,
+     11.014,
+     10.854
+    ]
+   },
+   "generator_denoise": {
+    "mean": 8.716,
+    "min": 8.3,
+    "max": 9.055,
+    "values": [
+     9.055,
+     8.941,
+     8.506,
+     8.3,
+     8.866,
+     8.625
+    ]
+   },
+   "generator_context": {
+    "mean": 2.252,
+    "min": 1.97,
+    "max": 2.835,
+    "values": [
+     2.835,
+     2.189,
+     1.97,
+     2.137,
+     2.149,
+     2.23
+    ]
+   },
+   "first_block_denoise": {
+    "mean": 0.406,
+    "min": 0.312,
+    "max": 0.504,
+    "values": [
+     0.504,
+     0.312,
+     0.453,
+     0.461,
+     0.346,
+     0.359
+    ]
+   },
+   "vae_decode": {
+    "mean": 3.25,
+    "min": 3.229,
+    "max": 3.272,
+    "values": [
+     3.229,
+     3.241,
+     3.246,
+     3.254,
+     3.257,
+     3.272
+    ]
+   },
+   "text_encode": {
+    "mean": 1.617,
+    "min": 1.364,
+    "max": 2.322,
+    "values": [
+     2.322,
+     1.513,
+     1.364,
+     1.564,
+     1.452,
+     1.485
+    ]
+   },
+   "inference_total": {
+    "mean": 16.294,
+    "min": 15.445,
+    "max": 18.054,
+    "values": [
+     18.054,
+     16.45,
+     15.445,
+     15.588,
+     16.056,
+     16.174
+    ]
+   },
+   "forwards": {
+    "denoise": 84,
+    "context": 21,
+    "first_block_denoise": 4,
+    "expected": {
+     "denoise": 84,
+     "context": 21,
+     "blocks": 21,
+     "first_block_steps": 4,
+     "steps_per_block": 4
+    }
+   },
+   "cuda_max_allocated_gib": 12.73251724243164,
+   "cuda_max_reserved_gib": 17.099609375,
+   "nvidia_smi_max_used_mib_whole_gpu": 20323,
+   "host_peak_rss_gib": 13.775001525878906,
+   "weights": {
+    "checkpoint_bytes": 5676220819,
+    "checkpoint_keys": [
+     "generator_ema"
+    ],
+    "used_key": "generator_ema",
+    "tensors": 825,
+    "generator_tensors": 825,
+    "parameters": 1418996800,
+    "fsdp_prefixed_keys_mapped": 825,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "probe_tensor": "model.blocks.0.self_attn.q.weight",
+    "probe_changed_from_base": true,
+    "probe_equals_checkpoint": true
+   },
+   "effective_config": {
+    "config_file": "causal_forcing_dmd_framewise.yaml",
+    "checkpoint_key": "generator_ema",
+    "denoising_step_list": [
+     1000,
+     750,
+     500,
+     250
+    ],
+    "denoising_step_list_first_chunk": null,
+    "warped_steps": [
+     1000.0,
+     937.5,
+     833.333,
+     625.0
+    ],
+    "warped_first_chunk": null,
+    "warp_denoising_step": true,
+    "num_frame_per_block": 1,
+    "independent_first_frame": false,
+    "context_noise": 0,
+    "timestep_shift": 5.0,
+    "offload_text_encoder": true
+   },
+   "warm_repeat_identical": true
+  }
+ },
+ "temporal": {
+  "cfpp_framewise_2step": {
+   "mean_abs_frame_to_frame_diff": 7.9762405334646544,
+   "per_video": [
+    15.097862454927885,
+    11.386616617838541,
+    5.146449162409856,
+    4.963564755692441,
+    6.075696854550614,
+    5.18725335536859
+   ]
+  },
+  "cf_framewise_4step": {
+   "mean_abs_frame_to_frame_diff": 18.34325543612836,
+   "per_video": [
+    21.031806077223557,
+    19.952281869741586,
+    12.302322518112312,
+    15.340925929403713,
+    21.070149916950456,
+    20.36204630533854
+   ]
+  }
+ }
+}
