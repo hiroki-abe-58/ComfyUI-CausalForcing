@@ -5,8 +5,8 @@ executed - the WSL distribution, the runtime's Python, the upstream checkout,
 the model folder - comes from a local JSON file that the ComfyUI API cannot
 write to:
 
-1. the path in the ``COMFYUI_MONARCHRT_CONFIG`` environment variable, else
-2. ``<ComfyUI user directory>/monarchrt.runtimes.json`` (a file at the root of
+1. the path in the ``COMFYUI_CAUSALFORCING_CONFIG`` environment variable, else
+2. ``<ComfyUI user directory>/causalforcing.runtimes.json`` (a file at the root of
    the user directory, outside every per-user folder that the userdata API
    serves).
 
@@ -64,7 +64,7 @@ class Runtime:
     env: dict = field(default_factory=dict)
     offload_text_encoder: bool = False
     timeout_minutes: int = 60
-    jobs_dir: str | None = None  # host path; default <ComfyUI temp>/monarchrt
+    jobs_dir: str | None = None  # host path; default <ComfyUI temp>/causalforcing
     wsl_mount_root: str = "/mnt/"
     description: str = ""
 
